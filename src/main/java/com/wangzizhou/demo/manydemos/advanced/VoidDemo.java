@@ -1,4 +1,4 @@
-package com.wangzizhou.demo.manydemos.concurrent;
+package com.wangzizhou.demo.manydemos.advanced;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

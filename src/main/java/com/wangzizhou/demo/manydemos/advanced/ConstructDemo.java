@@ -1,6 +1,7 @@
-package com.wangzizhou.demo.manydemos.concurrent;
+package com.wangzizhou.demo.manydemos.advanced;
 
 import java.lang.ref.Cleaner;
+// 应该是为了解决某种绕开构造器，创建无法回收的对象的防御机制
 
 public class ConstructDemo {
     private static class A {

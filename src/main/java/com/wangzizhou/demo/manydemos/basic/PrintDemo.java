@@ -1,4 +1,4 @@
-package com.wangzizhou.demo.manydemos.concurrent;
+package com.wangzizhou.demo.manydemos.basic;
 
 import java.util.ArrayList;
 import java.util.List;

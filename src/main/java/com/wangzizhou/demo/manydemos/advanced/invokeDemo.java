@@ -1,12 +1,17 @@
-package com.wangzizhou.demo.manydemos.concurrent;
-
+package com.wangzizhou.demo.manydemos.advanced;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import java.lang.reflect.Field;
 
-public class CloneDemo {
+/**
+ * @author wzz_714105382@icloud.com
+ * @version 1.0
+ * @date 2020/5/18 23:59
+ * @description 用JVM的骚操作穿透类的继承关系，在子类上调用父类的方法；注意，这个方法已经warn了
+ */
+public class invokeDemo {
     public static class GrandFather {
         public void say() {
             System.out.println(
@@ -50,33 +55,9 @@ public class CloneDemo {
         System.out.println(hd2.invoke(son));
 
     }
-    public static void test2() {
-        class A implements Cloneable{
-            private Integer i;
-            public A(Integer i) {
-                this.i = i;
-            }
 
-            public Integer getI() {
-                return i;
-            }
-
-            @Override
-            public final A clone() {
-                A res = null;
-                try {
-                    res =  (A)super.clone();
-                } catch (CloneNotSupportedException e) {
-                    e.printStackTrace();
-                }
-                return res;
-            }
-
-        }
-        A[] as = new A[]{new A(1), new A(1), new A(1)};
-        A[] aCopy = as.clone();
-        // 数组对元素浅拷贝
-        System.out.println(aCopy[0] == as[0]);
-        System.out.println(as[0].clone() == as[0] );
+    public static void main(String[] args) throws Throwable {
+        test();
     }
 }
+
