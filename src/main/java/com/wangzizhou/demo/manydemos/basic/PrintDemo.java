@@ -8,7 +8,7 @@ import java.util.Random;
  * @author wzz_714105382@icloud.com
  * @version 1.0
  * @date 2020/5/4 22:15
- * @description
+ * @description 输出学生信息
  */
 public class PrintDemo {
     public static class Student {
