@@ -25,5 +25,8 @@
 hs_err_pid*
 
 # Apple macOS local storage file.#
-*.DS_Store
+.DS_Store
+
+# IDEA dir #
+.idea/
 
