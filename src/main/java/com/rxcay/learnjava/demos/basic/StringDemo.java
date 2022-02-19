@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -65,10 +66,13 @@ public class StringDemo {
         System.out.println();
 
         testIndexingString();
-    }
 
-    public static void main(String[] args) {
-        StringDemo.test();
+        var sss = "你好,欢迎!";
+        String res = sss.chars().map(Character::toUpperCase).collect(
+                StringBuilder::new,
+                StringBuilder::appendCodePoint,
+                StringBuilder::append).toString();
+        System.out.println(res);
     }
 
     private static String naiveBytesToHexString(byte[] bytes) {

@@ -54,8 +54,4 @@ public class SBClearDemo {
         finishAvgTest(SBClearDemo::clearWithReplace, "with replace");
         finishAvgTest(SBClearDemo::clearWithSetLength, "with set length");
     }
-
-    public static void main(String[] args) {
-        test();
-    }
 }

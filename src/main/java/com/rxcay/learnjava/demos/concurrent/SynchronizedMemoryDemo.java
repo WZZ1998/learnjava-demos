@@ -7,24 +7,21 @@ public class SynchronizedMemoryDemo {
     public static int v2 = 0;
     public static void test() throws InterruptedException {
         Runnable modifyVarInSyncBlock = () -> {
-            int s = 0;
-            //System.out.println("before enter synchronized block");
-            synchronized (Object.class) {
+            //synchronized (Object.class) {
                 while(true) {
+//                    try {
+//                        TimeUnit.SECONDS.sleep(3);
+//                        break;
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     v1 = 1;
                     v2 = 1;
-                    s = 1;
 
-                    try {
-                        TimeUnit.SECONDS.sleep(3);
-                        break;
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+
 
                 }
-                //System.out.println("leaving enter synchronized block");
-            }
+            //}
 
         };
         Runnable readVarOutSyncBlock = () -> {
@@ -34,13 +31,20 @@ public class SynchronizedMemoryDemo {
                     break;
                 }
             }
+            System.out.printf("read thread: v1 = %d v2 = %d\n", v1,v2);
         };
 
         Thread readT = new Thread(readVarOutSyncBlock);
 
         Thread writeT = new Thread(modifyVarInSyncBlock);
-        readT.start();
         writeT.start();
+        readT.start();
+//        try {
+//            TimeUnit.SECONDS.sleep(1);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+
         while(true) {
             if (v1 == 1 && v2 == 1) {
                 break;

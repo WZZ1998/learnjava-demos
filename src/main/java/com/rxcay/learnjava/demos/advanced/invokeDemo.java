@@ -56,8 +56,5 @@ public class invokeDemo {
 
     }
 
-    public static void main(String[] args) throws Throwable {
-        test();
-    }
 }
 

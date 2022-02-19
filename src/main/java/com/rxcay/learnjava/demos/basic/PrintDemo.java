@@ -30,7 +30,7 @@ public class PrintDemo {
             this.balance = balance;
         }
     }
-    public static void main(String[] args) {
+    public static void test() {
         Random r = new Random();
         List<Student> l = new ArrayList<>();
 

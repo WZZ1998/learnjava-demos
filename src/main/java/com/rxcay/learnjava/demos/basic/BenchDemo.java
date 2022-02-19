@@ -7,10 +7,10 @@ package com.rxcay.learnjava.demos.basic;
  * @description
  */
 public class BenchDemo {
-    public static void main(String[] args) {
+    public static void test() {
         //记录开始时间
         long start = System.nanoTime();
-        int num = 100000000;
+        int num = 100000;
         for (int i = 0; i < num; i++) {
             BubbleSort(1, 2, 3, 4, 5, 6, 7, 8,9);
         }

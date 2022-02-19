@@ -30,3 +30,9 @@ hs_err_pid*
 # IDEA dir #
 .idea/
 
+# maven target dir#
+target/
+
+
+# deploy shell script#
+dToLinux.sh

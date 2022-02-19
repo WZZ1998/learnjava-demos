@@ -1,4 +1,4 @@
-package com.rxcay.learnjava.demos.basic;
+package com.rxcay.learnjava.demos.collection;
 
 import java.util.HashMap;
 
@@ -17,8 +17,8 @@ public class HashMapDemo {
         myMap.put(tar, "one");
         byte bb = 1;
         System.out.println("get with byte 1 :" + myMap.get(bb)); // 自动转型为Byte，然后Byte与Integer类对象一定不相等
-        System.out.println(tar.equals(bb));
-        System.out.println(tar == bb);
+        System.out.println(tar.equals(bb)); // 自动转型为Byte
+        System.out.println(tar == bb); // 对tar拆箱比较
     }
 
 }
